@@ -1,0 +1,64 @@
+body { 
+  background: url('../img/body-bg.jpg') no-repeat center center fixed;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+  margin-top: 10%;
+} 
+
+
+
+#miles {
+  margin-left: 0px;
+  font-size: 150px;
+  font-family: 'Russo One', sans-serif;
+  color: white;
+  background-color:black;
+  padding-right: 20px;
+}
+
+#miles-description {
+  margin-left: 0px;
+  font-size: 50px;
+  line-height:52px;
+  font-family: 'Russo One', sans-serif;
+  color: white;
+  background-color:black;
+  padding-right: 20px;
+  text-transform:uppercase;
+
+}
+
+#donate-container {
+  margin-top: 10px;
+}
+
+#donate {
+  margin-left: 0px;
+  font-size: 40px;
+  font-family: 'Russo One', sans-serif;
+  color: white;
+  background-color:black;
+  padding-right: 20px;
+  text-transform:uppercase;
+  color: yellow;
+}
+
+.feeddiv {
+  margin-top: 20px;
+  width: 500px;
+}
+
+.feeditem {
+  margin-left: 0px;
+  font-size: 22px;
+  line-height:23px;
+  font-family: 'Russo One', sans-serif;
+  color: white;
+  background-color:black;
+  padding-right: 20px;
+  text-transform:uppercase;  
+  margin-top:10px;
+}
