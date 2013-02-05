@@ -11,6 +11,8 @@ $(function(){
 	// Bind events
 
 
+	// I could do these setTimeouts with a .delay instead - TODO Jon Busby
+	
 	setTimeout(function(){
 		var milesDescription = $("#miles-description")
 		milesDescription.show();
@@ -18,7 +20,7 @@ $(function(){
 		milesDescription.shuffleLetters();
 	},800);
 	
-		setTimeout(function(){
+	setTimeout(function(){
 		var donate = $("#donate")
 		donate.show();
 		// Shuffle the container with custom text
@@ -26,9 +28,13 @@ $(function(){
 	},2000);
 	
 	setTimeout(function(){
-		var feed = $("#feed")
-		feed.fadeIn();
+		$(".feeddiv").hide().each(function(i) {
+		  $(this).delay(i*1000).fadeIn(1000);
+		});
 	},3000);
+	
+
+	
 	
 });
 

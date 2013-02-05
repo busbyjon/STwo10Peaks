@@ -1,6 +1,17 @@
 <?php include('includes.php') ?>
-<?php $search = new TwitterSearch('monkey');
+<?php $search = new TwitterSearch('miles');
 $results = $search->results();?>
+<?php
+// search code
+$miles = 0;
+foreach ($results as $result) {
+  if (preg_match("/([\d]+) miles/", $result->text, $matches)) {
+    $miles = $matches[0] + $miles;
+  }
+}
+
+$results = array_slice($results, 0, 5, true);
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -30,7 +41,7 @@ $results = $search->results();?>
         <!-- is there a tidier way to do this? I'm putting items in divs (to clear the content left and right), but to only make the background as wide as the content, Jon Busby -->
         <div id='container'>
           <span id='miles'>
-              152
+              <?php echo $miles ?>
           </span>
           <div id='miles-description-container'>
             <span id='miles-description' style='display:none'>
@@ -44,9 +55,9 @@ $results = $search->results();?>
             </spn>
           </div>
           
-          <div id='feed' style='display:none'>
+          <div id='feed'>
             <?php foreach ($results as $result):?>
-            <div class='feeddiv'>
+            <div class='feeddiv' style='display:none;'>
               <img src='<?php echo $result->profile_image_url?>'/>
             <div class='feeditem'><?php echo $result->text?></div>
             </div>
